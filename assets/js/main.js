@@ -63,6 +63,20 @@
     }
   });
 
+  function formatKztDisplay(n) {
+    if (n >= 1e9) {
+      return (
+        (n / 1e9).toLocaleString("ru-KZ", { maximumFractionDigits: 1 }) + " млрд ₸"
+      );
+    }
+    if (n >= 1e6) {
+      return (
+        (n / 1e6).toLocaleString("ru-KZ", { maximumFractionDigits: 1 }) + " млн ₸"
+      );
+    }
+    return fmt.format(Math.round(n)) + " ₸";
+  }
+
   var kztEl = document.querySelector("[data-count-kzt]");
   if (kztEl) {
     var kztTarget = parseFloat(kztEl.getAttribute("data-count-kzt"));
@@ -72,7 +86,7 @@
       function tick(now) {
         var t = Math.min((now - start) / duration, 1);
         var eased = 1 - Math.pow(1 - t, 3);
-        kztEl.textContent = fmt.format(Math.round(kztTarget * eased)) + " ₸";
+        kztEl.textContent = formatKztDisplay(kztTarget * eased);
         if (t < 1) requestAnimationFrame(tick);
       }
       requestAnimationFrame(tick);
@@ -117,7 +131,7 @@
     );
     document
       .querySelectorAll(
-        ".section, .stat-card, .story, .case-card, .review-card, .process li, .guarantee-box"
+        ".section, .stat-card, .story, .return-card, .review-card, .process li, .guarantee-box"
       )
       .forEach(function (el) {
         el.classList.add("reveal");

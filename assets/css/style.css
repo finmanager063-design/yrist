@@ -489,7 +489,106 @@ a:hover {
   color: var(--green);
 }
 
-/* Cases */
+/* Returns registry */
+.returns-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.return-card {
+  padding: 22px;
+  border-radius: 16px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.return-card:hover {
+  border-color: rgba(255, 215, 0, 0.4);
+  transform: translateY(-3px);
+}
+
+.return-card__head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.return-card__avatar {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 800;
+  background: linear-gradient(145deg, var(--gold), var(--gold-dim));
+  color: #0a0a0a;
+  flex-shrink: 0;
+}
+
+.return-card__fio {
+  margin: 0;
+  font-size: 17px;
+  font-family: var(--font-head);
+}
+
+.return-card__city {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.return-card__amount {
+  margin: 0 0 16px;
+  font-family: var(--font-head);
+  font-size: clamp(22px, 3vw, 28px);
+  font-weight: 800;
+  color: var(--green);
+  font-variant-numeric: tabular-nums;
+}
+
+.return-card__meta {
+  margin: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.return-card__meta div {
+  display: grid;
+  gap: 4px;
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+}
+
+.return-card__meta dt {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+
+.return-card__meta dd {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--text);
+}
+
+.returns-note {
+  margin: 28px 0 0;
+  text-align: center;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.returns-note strong {
+  color: var(--gold);
+}
+
+/* Cases (legacy) */
 .cases {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1081,6 +1180,7 @@ a:hover {
   .partners,
   .process,
   .reviews,
+  .returns-grid,
   .video-grid,
   .contact__grid,
   .check-list {
@@ -1124,6 +1224,7 @@ a:hover {
   .partners,
   .process,
   .reviews,
+  .returns-grid,
   .video-grid,
   .contact__grid,
   .check-list,

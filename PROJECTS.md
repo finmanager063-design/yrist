@@ -11,9 +11,10 @@
 | Страница | Ссылка |
 |----------|--------|
 | Меню администратора | https://alexseystrelkov978-lgtm.github.io/hrl-documents/ |
-| Админ: отчёт регулятора | https://alexseystrelkov978-lgtm.github.io/hrl-documents/admin/report.html |
-| Админ: исковое заявление | https://alexseystrelkov978-lgtm.github.io/hrl-documents/admin/claim.html |
-| Админ: договор | https://alexseystrelkov978-lgtm.github.io/hrl-documents/admin/contract.html |
+| Отчёт регулятора | https://alexseystrelkov978-lgtm.github.io/hrl-documents/admin/report.html |
+| Исковое заявление | https://alexseystrelkov978-lgtm.github.io/hrl-documents/admin/claim.html |
+| Договор | https://alexseystrelkov978-lgtm.github.io/hrl-documents/admin/contract.html |
+| Служебный ключ GitHub (необяз.) | https://alexseystrelkov978-lgtm.github.io/hrl-documents/admin/setup.html |
 
 Клиенту отправляете **только короткую ссылку на подпись** (создаётся в админке).
 
