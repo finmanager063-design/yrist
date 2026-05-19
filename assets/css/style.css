@@ -588,11 +588,17 @@ a:hover {
   color: var(--gold);
 }
 
-/* Cases (legacy) */
+/* Cases / реестр возвратов */
 .cases {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.cases .case-card__nums dd {
+  text-align: right;
+  max-width: 58%;
+  line-height: 1.35;
 }
 
 .case-card {

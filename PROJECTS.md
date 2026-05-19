@@ -20,18 +20,15 @@
 
 ---
 
-## 2. Сайт юриста Сергея Макарова (лендинг)
+## 2. Сайт юриста Сергея Макарова (лендинг) — основной
 
-**Репозиторий (копия):** https://github.com/alexseystrelkov978-lgtm/makarov-law  
-**Старая публикация:** https://github.com/finmanager063-design/yrist
+**Репозиторий:** https://github.com/finmanager063-design/yrist
 
 | Страница | Ссылка |
 |----------|--------|
-| Главная | https://alexseystrelkov978-lgtm.github.io/makarov-law/ |
-| Консультация (для WhatsApp/Telegram) | https://alexseystrelkov978-lgtm.github.io/makarov-law/konsult.html |
-| Поделиться текстом | https://alexseystrelkov978-lgtm.github.io/makarov-law/share.html |
-
-Также работает (если не обновляли): https://finmanager063-design.github.io/yrist/
+| **Главная** | https://finmanager063-design.github.io/yrist/ |
+| Консультация (WhatsApp/Telegram) | https://finmanager063-design.github.io/yrist/konsult.html |
+| Поделиться текстом | https://finmanager063-design.github.io/yrist/share.html |
 
 ---
 

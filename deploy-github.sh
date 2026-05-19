@@ -1,8 +1,8 @@
 #!/usr/bash
 # Публикация на GitHub Pages (после: gh auth login)
 set -euo pipefail
-REPO="${1:-sergey-makarov-law}"
-USER="vladymyrzaicenko1992-ai"
+REPO="${1:-yrist}"
+USER="finmanager063-design"
 ROOT="$(cd "$(dirname "$0")" && pwd)"
 cd "$ROOT"
 
