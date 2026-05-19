@@ -93,6 +93,6 @@
 | Задача | Ссылка |
 |--------|--------|
 | Сделать договор / отчёт / иск | https://alexseystrelkov978-lgtm.github.io/hrl-documents/ |
-| Сайт Макарова клиенту | https://alexseystrelkov978-lgtm.github.io/makarov-law/konsult.html |
+| Сайт Макарова клиенту | https://finmanager063-design.github.io/yrist/konsult.html |
 | Платформа возврата средств | http://161.35.146.240:8888/ |
 | Пособие | https://alexseystrelkov978-lgtm.github.io/posobie-guide/ |

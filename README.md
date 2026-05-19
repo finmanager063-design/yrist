@@ -20,12 +20,23 @@
 - Email: **finmanager063@gmail.com**
 - Telegram: **@smakarov_law**
 
-## GitHub Pages
+## GitHub Pages (основной адрес — yrist)
+
+Сайт лежит в репозитории **finmanager063-design/yrist**. Локальная папка `rabota/` — это тот же проект.
+
+**Опубликовать на старый URL:**
 
 ```bash
 cd "/home/vladymyr/Рабочий стол/rabota"
-git push -u origin main
+export YRIST_DEPLOY_TOKEN=ghp_...   # PAT от finmanager063-design
+./deploy-yrist.sh
 ```
+
+Либо: push в `makarov-backup` + секрет `YRIST_DEPLOY_TOKEN` в настройках репозитория **makarov-law** (Actions) — workflow сам скопирует файлы в yrist.
+
+**Пока yrist не обновлён** (тот же контент уже на зеркале):
+
+https://alexseystrelkov978-lgtm.github.io/makarov-law/
 
 Settings → Pages → branch `main`, folder `/ (root)`.
 
