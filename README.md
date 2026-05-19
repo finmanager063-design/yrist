@@ -1,30 +1,44 @@
-# Сергей Макаров — юрист по трудовому праву (Казахстан)
+# 🍬 Сайт-конфетка Сергея Макарова
 
-Рекламный лендинг для личной практики: трудовые споры, зарплата, увольнения, консультации по всей Республике Казахстан.
+Лендинг: **возврат денег от мошенников** в Казахстане. Гонорар успеха, кейсы, международный контур, 14 секций.
+
+## Красивые ссылки для клиентов
+
+| Назначение | URL |
+|------------|-----|
+| **Короткая на консультацию** | `https://finmanager063-design.github.io/yrist/konsult.html` |
+| **Страница «скопировать текст»** | `https://finmanager063-design.github.io/yrist/share.html` |
+| Полный сайт | `https://finmanager063-design.github.io/yrist/` |
+
+В WhatsApp/Telegram вставляйте **konsult.html** — откроется карточка с заголовком и картинкой, затем форма записи.
+
+Свой домен: см. `CNAME.example` → GitHub Pages → Custom domain.
+
+## Контакты на сайте
+
+- Телефон / WhatsApp: **+7 (775) 419-49-17**
+- Email: **finmanager063@gmail.com**
+- Telegram: **@smakarov_law**
 
 ## GitHub Pages
 
-1. Создайте репозиторий на GitHub (например `sergey-makarov-law`).
-2. В корне репозитория должны лежать `index.html` и папка `assets/`.
-3. **Settings → Pages → Build and deployment → Source:** Deploy from a branch.
-4. **Branch:** `main` / folder `/ (root)`.
-5. Сайт откроется по адресу: `https://<username>.github.io/<repo>/`
-
-## Локальный просмотр
-
 ```bash
 cd "/home/vladymyr/Рабочий стол/rabota"
+git push -u origin main
+```
+
+Settings → Pages → branch `main`, folder `/ (root)`.
+
+## Локально
+
+```bash
 python3 -m http.server 8080
 ```
 
-Откройте http://localhost:8080
+## Перед запуском (чек-лист)
 
-## Что заменить перед публикацией
-
-- Телефон и WhatsApp в `index.html` (сейчас заглушка `+7 700 000-00-00`)
-- Email при необходимости
-- Добавьте реальное фото в блок `.portrait-card` (файл `assets/img/sergey.jpg`)
-
-## Стек
-
-Статический HTML, CSS, JavaScript — без сборки и зависимостей.
+- [ ] Фото Сергея → `assets/img/sergey.jpg` (подключить в `.hero-card__photo` и `.about__photo`)
+- [ ] Скриншоты переводов / кейсов
+- [ ] Видеоотзывы в секцию `#video`
+- [ ] Номер свидетельства в подвале
+- [ ] Яндекс.Метрика / Google Analytics

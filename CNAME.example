@@ -1,0 +1,9 @@
+# Переименуйте в CNAME (без .example) и укажите ваш домен, например:
+# makarov-law.kz
+#
+# В DNS регистратора:
+#   CNAME  @  →  finmanager063-design.github.io
+# или для www:
+#   CNAME  www  →  finmanager063-design.github.io
+#
+# Затем: GitHub → репозиторий yrist → Settings → Pages → Custom domain

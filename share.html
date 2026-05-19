@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ссылка для клиентов — Сергей Макаров</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    :root { --gold: #ffd700; --bg: #0a0a0a; --blue: #0a2540; --muted: #9ca3af; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Inter, sans-serif; background: var(--bg); color: #fff; min-height: 100vh; padding: 24px; }
+    .wrap { max-width: 520px; margin: 0 auto; }
+    h1 { font-family: Montserrat, sans-serif; font-size: 22px; margin: 0 0 8px; }
+    .sub { color: var(--muted); font-size: 14px; margin-bottom: 28px; }
+    .card { background: linear-gradient(160deg, var(--blue), #111); border: 1px solid rgba(255,215,0,.3); border-radius: 16px; padding: 24px; margin-bottom: 16px; }
+    .brand { font-size: 13px; color: var(--gold); font-weight: 700; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 12px; }
+    .link-display { font-size: 18px; font-weight: 700; word-break: break-all; color: #fff; margin: 12px 0; padding: 14px; background: rgba(0,0,0,.35); border-radius: 10px; border: 1px dashed rgba(255,215,0,.35); }
+    .link-display small { display: block; font-size: 12px; color: var(--muted); font-weight: 400; margin-top: 6px; }
+    textarea { width: 100%; min-height: 200px; padding: 14px; border-radius: 10px; border: 1px solid #333; background: #111; color: #eee; font-family: inherit; font-size: 14px; line-height: 1.5; resize: vertical; }
+    .btns { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+    button, .btn-link { padding: 12px 18px; border: none; border-radius: 10px; font-weight: 700; font-size: 14px; cursor: pointer; text-decoration: none; display: inline-block; text-align: center; }
+    .btn-copy { background: linear-gradient(135deg, var(--gold), #c9a800); color: #0a0a0a; flex: 1; min-width: 140px; }
+    .btn-wa { background: #00c853; color: #fff; }
+    .btn-open { background: transparent; border: 1px solid #444; color: #fff; }
+    .ok { display: none; color: var(--gold); font-size: 13px; margin-top: 8px; }
+    .ok.show { display: block; }
+    .qr { text-align: center; margin-top: 20px; }
+    .qr img { border-radius: 12px; background: #fff; padding: 8px; }
+    .hint { font-size: 12px; color: var(--muted); margin-top: 24px; line-height: 1.5; }
+    a { color: var(--gold); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>🍬 Ссылка для клиентов</h1>
+    <p class="sub">Копируйте текст и отправляйте в WhatsApp или Telegram — откроется красивая карточка сайта.</p>
+
+    <div class="card">
+      <p class="brand">Короткая ссылка на консультацию</p>
+      <div class="link-display" id="short-url">…</div>
+      <p style="margin:8px 0 0;font-size:12px;color:var(--muted)">Ведёт на форму записи на сайте</p>
+      <div class="btns">
+        <button type="button" class="btn-copy" data-copy="url">Копировать ссылку</button>
+        <a class="btn-link btn-open" id="open-site" href="#">Открыть сайт</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <p class="brand">Готовое сообщение клиенту</p>
+      <textarea id="share-text" readonly></textarea>
+      <p class="ok" id="copied-msg">✓ Скопировано — вставьте в чат</p>
+      <div class="btns">
+        <button type="button" class="btn-copy" data-copy="text">Копировать текст</button>
+        <a class="btn-link btn-wa" id="wa-share" href="#" target="_blank" rel="noopener">Отправить в WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="card qr">
+      <p class="brand">QR-код (визитка, сторис)</p>
+      <img id="qr" width="200" height="200" alt="QR на консультацию">
+    </div>
+
+    <p class="hint">
+      <strong>Свой домен:</strong> купите, например, <code>makarov-law.kz</code>, в DNS укажите CNAME на <code>finmanager063-design.github.io</code> и добавьте домен в GitHub → Settings → Pages. Тогда ссылка станет короче: <code>https://makarov-law.kz/konsult.html</code>
+    </p>
+    <p class="hint"><a href="index.html">← На главный сайт</a></p>
+  </div>
+
+  <script>
+    (function () {
+      var origin = location.origin;
+      var path = location.pathname.replace(/\/[^/]*$/, "/");
+      var base = origin + path;
+      var shortLink = base + "konsult.html";
+      var mainLink = base + "index.html#contact";
+
+      document.getElementById("short-url").innerHTML =
+        shortLink.replace("https://", "") +
+        '<small>https://' + shortLink.replace("https://", "") + "</small>";
+
+      var message =
+        "🍬 *Сергей Макаров* — юрист по возврату денег от мошенников\n\n" +
+        "✅ Бесплатная консультация 15 минут\n" +
+        "✅ Платите только *после* возврата денег (гонорар успеха)\n" +
+        "✅ Казахстан, онлайн по всей стране\n\n" +
+        "📞 +7 (775) 419-49-17\n\n" +
+        "👉 Записаться: " + shortLink;
+
+      document.getElementById("share-text").value = message;
+      document.getElementById("open-site").href = mainLink;
+      document.getElementById("qr").src =
+        "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=" +
+        encodeURIComponent(shortLink);
+
+      var waText = encodeURIComponent(
+        "Здравствуйте! Хочу бесплатную консультацию по возврату денег. " + shortLink
+      );
+      document.getElementById("wa-share").href =
+        "https://wa.me/77754194917?text=" + waText;
+
+      document.querySelectorAll("[data-copy]").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          var val =
+            btn.getAttribute("data-copy") === "url" ? shortLink : message;
+          navigator.clipboard.writeText(val).then(function () {
+            var ok = document.getElementById("copied-msg");
+            ok.classList.add("show");
+            setTimeout(function () { ok.classList.remove("show"); }, 2500);
+          });
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
