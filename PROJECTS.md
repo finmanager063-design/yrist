@@ -1,39 +1,100 @@
-# Проекты в папке «rabota» — ссылки и доступ
+# Все проекты в «rabota» — ссылки для перехода
 
 Обновлено: 19.05.2026
 
-## Онлайн (GitHub Pages)
+---
 
-| Проект | Описание | Ссылка |
-|--------|----------|--------|
-| **HR & Legal — документы** | 3 типа: отчёт, иск, договор. Админка + короткая ссылка на подпись | **Главная (админ):** https://alexseystrelkov978-lgtm.github.io/hrl-documents/ |
-| | Отчёт | https://alexseystrelkov978-lgtm.github.io/hrl-documents/admin/report.html |
-| | Иск | https://alexseystrelkov978-lgtm.github.io/hrl-documents/admin/claim.html |
-| | Договор | https://alexseystrelkov978-lgtm.github.io/hrl-documents/admin/contract.html |
-| **Сайт Сергея Макарова (yrist)** | Лендинг юриста, консультация | https://finmanager063-design.github.io/yrist/ |
-| | Короткая на консультацию | https://finmanager063-design.github.io/yrist/konsult.html |
-| | Страница «поделиться» | https://finmanager063-design.github.io/yrist/share.html |
+## 1. HR & Legal — электронные документы
 
-## Локально на компьютере
+**Репозиторий:** https://github.com/alexseystrelkov978-lgtm/hrl-documents
 
-| Проект | Папка | Как открыть |
-|--------|-------|-------------|
-| **GlobalSafe Finance (newsell)** | `dla_posobia/newsell/` | `cd public_html && php -S 127.0.0.1:8080` → http://127.0.0.1:8080 |
-| **GlobalSafe (hybrid)** | `dla_posobia/newsell_hybrid/` | то же |
-| **Sels (старая версия)** | `dla_posobia/Sels/public_html/` | PHP + MySQL на хостинге |
-| **Пособие (HTML)** | `dla_posobia/ПОЛНОЕ_ПРАКТИЧЕСКОЕ_ПОСОБИЕ_ПОЛНАЯ_ВЕРСИЯ.html` | открыть файл в браузере |
+| Страница | Ссылка |
+|----------|--------|
+| Меню администратора | https://alexseystrelkov978-lgtm.github.io/hrl-documents/ |
+| Админ: отчёт регулятора | https://alexseystrelkov978-lgtm.github.io/hrl-documents/admin/report.html |
+| Админ: исковое заявление | https://alexseystrelkov978-lgtm.github.io/hrl-documents/admin/claim.html |
+| Админ: договор | https://alexseystrelkov978-lgtm.github.io/hrl-documents/admin/contract.html |
 
-## Документы (не сайт)
-
-PDF, Word, Excel в `dla_posobia/` — открываются локально.
-
-## Сервер 161.35.146.240
-
-Сейчас на сервере: **DeepSig** (прокси на порт 8080), каталог `/var/www/gsf` — другой проект (GSF).  
-PHP-платформы newsell/Sels туда **ещё не вынесены** — нужен отдельный vhost и MySQL.
+Клиенту отправляете **только короткую ссылку на подпись** (создаётся в админке).
 
 ---
 
-Репозитории GitHub:
-- https://github.com/alexseystrelkov978-lgtm/hrl-documents
-- https://github.com/finmanager063-design/yrist (лендинг Макарова)
+## 2. Сайт юриста Сергея Макарова (лендинг)
+
+**Репозиторий (копия):** https://github.com/alexseystrelkov978-lgtm/makarov-law  
+**Старая публикация:** https://github.com/finmanager063-design/yrist
+
+| Страница | Ссылка |
+|----------|--------|
+| Главная | https://alexseystrelkov978-lgtm.github.io/makarov-law/ |
+| Консультация (для WhatsApp/Telegram) | https://alexseystrelkov978-lgtm.github.io/makarov-law/konsult.html |
+| Поделиться текстом | https://alexseystrelkov978-lgtm.github.io/makarov-law/share.html |
+
+Также работает (если не обновляли): https://finmanager063-design.github.io/yrist/
+
+---
+
+## 3. GlobalSafe Finance (newsell) — PHP-платформа
+
+**Папка:** `dla_posobia/newsell/`  
+**На сервере:** залито на `161.35.146.240:8888`
+
+| | Ссылка |
+|---|--------|
+| **Онлайн (сервер)** | http://161.35.146.240:8888/ |
+| Локально | `cd dla_posobia/newsell/public_html && php -S 127.0.0.1:8080` → http://127.0.0.1:8080 |
+
+Нужна MySQL (файл `.env` по образцу `.env.example`). Без базы часть функций не заработает.
+
+---
+
+## 4. GlobalSafe Finance (hybrid) — вариант платформы
+
+**Папка:** `dla_posobia/newsell_hybrid/`  
+Локально: `cd public_html && php -S 127.0.0.1:8081` → http://127.0.0.1:8081  
+(на сервер пока не выкладывался — дублирует newsell с другими страницами вывода)
+
+---
+
+## 5. Sels — старая версия сайта
+
+**Папка:** `dla_posobia/Sels/public_html/`  
+Только локально или на старом хостинге — в GitHub не публиковался.
+
+---
+
+## 6. Практическое пособие (HTML)
+
+**Репозиторий:** https://github.com/alexseystrelkov978-lgtm/posobie-guide
+
+| | Ссылка |
+|---|--------|
+| **Читать онлайн** | https://alexseystrelkov978-lgtm.github.io/posobie-guide/ |
+| Файл на диске | `dla_posobia/ПОЛНОЕ_ПРАКТИЧЕСКОЕ_ПОСОБИЕ_ПОЛНАЯ_ВЕРСИЯ.html` |
+
+---
+
+## 7. Документы (не сайты)
+
+В `dla_posobia/`: PDF, Word, Excel — открываются на компьютере.
+
+---
+
+## 8. Сервер 161.35.146.240
+
+| Сервис | Порт / путь | Ссылка |
+|--------|-------------|--------|
+| DeepSig (основной) | 80 | http://161.35.146.240/ |
+| GlobalSafe (newsell) | 8888 | http://161.35.146.240:8888/ |
+| GSF (другой проект) | `/var/www/gsf` | не настроен в nginx для внешнего доступа |
+
+---
+
+## Быстрая шпаргалка «куда нажать»
+
+| Задача | Ссылка |
+|--------|--------|
+| Сделать договор / отчёт / иск | https://alexseystrelkov978-lgtm.github.io/hrl-documents/ |
+| Сайт Макарова клиенту | https://alexseystrelkov978-lgtm.github.io/makarov-law/konsult.html |
+| Платформа возврата средств | http://161.35.146.240:8888/ |
+| Пособие | https://alexseystrelkov978-lgtm.github.io/posobie-guide/ |
