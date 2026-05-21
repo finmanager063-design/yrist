@@ -26,9 +26,23 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/wallet-effects.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍬</text></svg>">
 </head>
 <body>
+  <div class="top-ticker" aria-hidden="true">
+    <div class="top-ticker__track">
+      <span>🤝 Партнёрство с <strong>GlobalSafe Finance</strong> — <a href="https://financegroup.store/" target="_blank" rel="noopener">financegroup.store</a></span>
+      <span>✅ В контуре платформы: <strong data-ticker-kzt="316936798">316 936 798 ₸</strong></span>
+      <span>👥 <strong data-ticker-count="12495">12 495</strong> клиентов на сопровождении</span>
+      <span>🍬 Сергей Макаров — ваш юрист · гонорар успеха</span>
+      <span>🤝 Партнёрство с <strong>GlobalSafe Finance</strong> — <a href="https://financegroup.store/" target="_blank" rel="noopener">financegroup.store</a></span>
+      <span>✅ В контуре платформы: <strong data-ticker-kzt="316936798">316 936 798 ₸</strong></span>
+      <span>👥 <strong data-ticker-count="12495">12 495</strong> клиентов на сопровождении</span>
+      <span>🍬 Сергей Макаров — ваш юрист · гонорар успеха</span>
+    </div>
+  </div>
+
   <header class="header" id="top">
     <div class="container header__inner">
       <a class="logo" href="#top">
@@ -42,6 +56,7 @@
         <span></span><span></span><span></span>
       </button>
       <nav class="nav" data-nav>
+        <a href="#partner">Платформа</a>
         <a href="#cases">Кейсы</a>
         <a href="#reviews">Отзывы</a>
         <a href="#about">Обо мне</a>
@@ -84,12 +99,35 @@
             <span>🌍 Контур MAS, SEC, FCA</span>
           </div>
         </div>
-        <div class="hero__visual" aria-hidden="true">
-          <div class="hero-card">
-            <div class="hero-card__photo">СМ</div>
-            <p class="hero-card__name">Сергей Макаров</p>
-            <p class="hero-card__tag">Ваш юрист по возврату денег</p>
-            <p class="hero-card__promise">Потеряли деньги? Верну законно.<br>Или не возьму ни тенге.</p>
+        <div class="hero__visual">
+          <div class="wallet-mock" data-wallet>
+            <div class="wallet-mock__border"></div>
+            <div class="wallet-mock__inner">
+              <div class="wallet-mock__head">
+                <span class="wallet-mock__brand">
+                  <span class="pulse-dot" aria-hidden="true"></span>
+                  GlobalSafe Finance
+                </span>
+                <span class="wallet-mock__net">KZ · ₸</span>
+              </div>
+              <p class="wallet-mock__label">В контуре возвратов</p>
+              <p class="wallet-mock__balance" data-wallet-balance data-count-kzt="316936798">316 936 798 ₸</p>
+              <div class="wallet-mock__row">
+                <div class="wallet-mock__chip wallet-mock__chip--up">
+                  <span>Клиенты</span>
+                  <strong data-count="12495">12 495</strong>
+                </div>
+                <div class="wallet-mock__chip wallet-mock__chip--gold">
+                  <span>Юрист</span>
+                  <strong>С. Макаров</strong>
+                </div>
+              </div>
+              <div class="wallet-mock__tx" data-live-tx>
+                <span class="wallet-mock__tx-icon">✓</span>
+                <span class="wallet-mock__tx-text">Зачисление · 4 250 000 ₸ · Алматы</span>
+              </div>
+              <a class="wallet-mock__cta" href="https://financegroup.store/register.php" target="_blank" rel="noopener">Войти в контур платформы →</a>
+            </div>
           </div>
         </div>
       </div>
@@ -113,7 +151,38 @@
             <p class="stat-card__label">дел закрыто досудебно</p>
           </article>
         </div>
-        <p class="stats__note">Данные обновляются при загрузке страницы</p>
+        <p class="stats__note">Данные обновляются при загрузке страницы · синхронизация с контуром <a href="https://financegroup.store/" target="_blank" rel="noopener">GlobalSafe Finance</a></p>
+      </div>
+    </section>
+
+    <!-- PROMO BANNERS -->
+    <section class="promo-banners" aria-label="Рекламные баннеры">
+      <div class="container">
+        <div class="banner-carousel" data-banner-carousel>
+          <article class="promo-banner promo-banner--active wallet-glow" data-banner="0">
+            <div class="promo-banner__badge">Партнёр</div>
+            <h3>GlobalSafe Finance</h3>
+            <p>Финансово-юридическое сопровождение возврата средств в Казахстане — международный контур MAS, SEC, FCA.</p>
+            <a class="btn btn--candy btn--sm" href="https://financegroup.store/register.php" target="_blank" rel="noopener">Регистрация на платформе</a>
+          </article>
+          <article class="promo-banner wallet-glow" data-banner="1">
+            <div class="promo-banner__badge promo-banner__badge--green">Успех</div>
+            <h3>12,8 млрд ₸ возвращено</h3>
+            <p>87% дел без суда. Сергей Макаров ведёт кейсы в едином окне с платформой — прозрачный статус, как в криптокошельке.</p>
+            <a class="btn btn--ghost-light btn--sm" href="#contact">Бесплатная консультация 15 мин</a>
+          </article>
+          <article class="promo-banner wallet-glow" data-banner="2">
+            <div class="promo-banner__badge">0 ₸ аванс</div>
+            <h3>Гонорар успеха</h3>
+            <p>Платите только когда деньги на вашей карте. Платформа + юрист — двойная защита от мошенников.</p>
+            <a class="btn btn--ghost-light btn--sm" href="https://financegroup.store/" target="_blank" rel="noopener">Узнать о платформе</a>
+          </article>
+          <div class="banner-carousel__dots" data-banner-dots>
+            <button type="button" class="is-active" aria-label="Баннер 1"></button>
+            <button type="button" aria-label="Баннер 2"></button>
+            <button type="button" aria-label="Баннер 3"></button>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -325,11 +394,37 @@
       </div>
     </section>
 
-    <!-- 6. PARTNERS -->
-    <section class="section" id="partners">
+    <!-- 6. PARTNERS + PLATFORM -->
+    <section class="section" id="partner">
+      <div class="container">
+        <article class="gs-banner wallet-glow" id="partners">
+          <div class="gs-banner__visual">
+            <div class="gs-banner__orb gs-banner__orb--1"></div>
+            <div class="gs-banner__orb gs-banner__orb--2"></div>
+            <div class="gs-banner__logo">GSF</div>
+          </div>
+          <div class="gs-banner__content">
+            <p class="gs-banner__eyebrow">Официальное сотрудничество</p>
+            <h2 class="section-title">GlobalSafe Finance × Сергей Макаров</h2>
+            <p class="section-text">Я веду юридическое сопровождение возвратов в партнёрстве с платформой <a href="https://financegroup.store/" target="_blank" rel="noopener"><strong>financegroup.store</strong></a> — единый кабинет, KYC, статусы дел и международный регуляторный контур, как на <a href="https://financegroup.store/" target="_blank" rel="noopener">GlobalSafe Finance</a>.</p>
+            <ul class="gs-banner__stats">
+              <li><strong data-count="12495">12 495</strong><span>клиентов на платформе</span></li>
+              <li><strong data-count-kzt="316936798" data-platform-kzt>316 936 798 ₸</strong><span>в контуре возвратов</span></li>
+              <li><strong>24/7</strong><span>поддержка кейса</span></li>
+            </ul>
+            <div class="gs-banner__actions">
+              <a class="btn btn--candy" href="https://financegroup.store/register.php" target="_blank" rel="noopener">Зарегистрироваться на платформе</a>
+              <a class="btn btn--ghost-light" href="https://financegroup.store/login.php" target="_blank" rel="noopener">Вход в кабинет</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section--dark" id="regulators">
       <div class="container">
         <h2 class="section-title">Работаю там, где зарегистрированы ваши деньги</h2>
-        <p class="section-text">Мошенники регистрируют компании в Сингапуре, Лондоне, на Кипре. Я работаю с регуляторами этих стран — реальные каналы коммуникации, которые возвращают деньги.</p>
+        <p class="section-text">Мошенники регистрируют компании в Сингапуре, Лондоне, на Кипре. Вместе с контуром GlobalSafe Finance выстраиваем коммуникации с регуляторами, которые возвращают деньги.</p>
         <div class="partners">
           <div class="partners__col">
             <h3>Надзор и регуляторы</h3>
@@ -607,7 +702,8 @@
         <p>📍 Алматы / Онлайн по всему РК</p>
         <p class="footer__social">
           <a href="https://wa.me/77754194917" target="_blank" rel="noopener">WhatsApp</a> ·
-          <a href="https://t.me/smakarov_law" target="_blank" rel="noopener">Telegram</a>
+          <a href="https://t.me/smakarov_law" target="_blank" rel="noopener">Telegram</a> ·
+          <a href="https://financegroup.store/" target="_blank" rel="noopener">GlobalSafe Finance</a>
         </p>
       </div>
       <div class="footer__legal">
@@ -618,8 +714,11 @@
     </div>
   </footer>
 
-  <a class="float-wa" href="https://wa.me/77754194917" target="_blank" rel="noopener" aria-label="WhatsApp">📱</a>
+  <div class="toast-stack" data-toast-stack aria-live="polite" aria-atomic="true"></div>
+
+  <a class="float-wa pulse-glow" href="https://wa.me/77754194917" target="_blank" rel="noopener" aria-label="WhatsApp">📱</a>
 
   <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/wallet-animations.js" defer></script>
 </body>
 </html>

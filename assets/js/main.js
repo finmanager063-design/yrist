@@ -77,9 +77,9 @@
     return fmt.format(Math.round(n)) + " ₸";
   }
 
-  var kztEl = document.querySelector("[data-count-kzt]");
-  if (kztEl) {
+  document.querySelectorAll("[data-count-kzt]:not([data-wallet-balance]):not([data-platform-kzt])").forEach(function (kztEl) {
     var kztTarget = parseFloat(kztEl.getAttribute("data-count-kzt"));
+    if (Number.isNaN(kztTarget)) return;
     var runKzt = function () {
       var duration = 1800;
       var start = performance.now();
@@ -105,7 +105,7 @@
     } else {
       runKzt();
     }
-  }
+  });
 
   document.querySelectorAll(".case-card__photo[data-initials]").forEach(function (el) {
     var init = el.getAttribute("data-initials");
