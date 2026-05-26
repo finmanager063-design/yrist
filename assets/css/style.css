@@ -24,6 +24,41 @@ html {
   scroll-behavior: smooth;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+.skip-link {
+  position: absolute;
+  left: 12px;
+  top: -48px;
+  z-index: 500;
+  padding: 10px 16px;
+  border-radius: 8px;
+  background: var(--gold);
+  color: #0a0a0a;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.skip-link:focus {
+  top: 12px;
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
 body {
   margin: 0;
   font-family: var(--font);
@@ -1142,6 +1177,31 @@ a:hover {
   max-width: 480px;
 }
 
+/* Sticky mobile CTA */
+.sticky-cta {
+  display: none;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 140;
+  padding: 12px 16px calc(12px + env(safe-area-inset-bottom, 0px));
+  background: linear-gradient(180deg, transparent, rgba(10, 10, 10, 0.96) 28%);
+  backdrop-filter: blur(8px);
+}
+
+.sticky-cta[hidden] {
+  display: none !important;
+}
+
+.sticky-cta:not([hidden]) {
+  display: block;
+}
+
+.sticky-cta .btn {
+  box-shadow: 0 8px 28px rgba(255, 215, 0, 0.25);
+}
+
 /* Float WA */
 .float-wa {
   position: fixed;
@@ -1253,5 +1313,15 @@ a:hover {
   .btn--candy {
     font-size: 14px;
     padding: 14px 18px;
+  }
+
+  .float-wa {
+    bottom: calc(88px + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+@media (min-width: 721px) {
+  .sticky-cta {
+    display: none !important;
   }
 }

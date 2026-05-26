@@ -28,16 +28,49 @@
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/wallet-effects.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍬</text></svg>">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "LegalService",
+        "name": "Сергей Макаров — юрист по возврату денег",
+        "description": "Возврат средств от мошенников в Казахстане. Гонорар успеха — оплата только после возврата.",
+        "url": "https://finmanager063-design.github.io/yrist/",
+        "image": "https://finmanager063-design.github.io/yrist/assets/img/og-cover.svg",
+        "telephone": "+7-775-419-49-17",
+        "email": "finmanager063@gmail.com",
+        "areaServed": { "@type": "Country", "name": "Kazakhstan" },
+        "priceRange": "Гонорар успеха",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "bestRating": "5",
+          "ratingCount": "2543"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "Сколько стоит ваша услуга?", "acceptedAnswer": { "@type": "Answer", "text": "Первая консультация бесплатно 15 минут. Далее гонорар успеха — платите процент только после поступления денег на счёт." }},
+          { "@type": "Question", "name": "Какие у меня шансы вернуть деньги?", "acceptedAnswer": { "@type": "Answer", "text": "На бесплатной консультации анализирую ситуацию и называю реальный процент успеха. Если шансы ниже 50% — честно говорю и не беру дело." }},
+          { "@type": "Question", "name": "Вы работаете онлайн? Я не из Алматы.", "acceptedAnswer": { "@type": "Answer", "text": "Да. Телефон, WhatsApp, Telegram, видеозвонки. Документы в электронном виде. Вся Республика Казахстан." }}
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
   <div class="top-ticker" aria-hidden="true">
     <div class="top-ticker__track">
       <span>🤝 Партнёрство с <strong>GlobalSafe Finance</strong> — <a href="https://financegroup.store/" target="_blank" rel="noopener">financegroup.store</a></span>
-      <span>✅ В контуре платформы: <strong data-ticker-kzt="316936798">316 936 798 ₸</strong></span>
+      <span>✅ В контуре платформы: <strong data-ticker-kzt="316900000000">316,9 млрд ₸</strong></span>
       <span>👥 <strong data-ticker-count="12495">12 495</strong> клиентов на сопровождении</span>
       <span>🍬 Сергей Макаров — ваш юрист · гонорар успеха</span>
       <span>🤝 Партнёрство с <strong>GlobalSafe Finance</strong> — <a href="https://financegroup.store/" target="_blank" rel="noopener">financegroup.store</a></span>
-      <span>✅ В контуре платформы: <strong data-ticker-kzt="316936798">316 936 798 ₸</strong></span>
+      <span>✅ В контуре платформы: <strong data-ticker-kzt="316900000000">316,9 млрд ₸</strong></span>
       <span>👥 <strong data-ticker-count="12495">12 495</strong> клиентов на сопровождении</span>
       <span>🍬 Сергей Макаров — ваш юрист · гонорар успеха</span>
     </div>
@@ -67,7 +100,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main">
     <!-- 1. HERO -->
     <section class="hero" id="hero">
       <div class="container hero__grid">
@@ -111,7 +144,7 @@
                 <span class="wallet-mock__net">KZ · ₸</span>
               </div>
               <p class="wallet-mock__label">В контуре возвратов</p>
-              <p class="wallet-mock__balance" data-wallet-balance data-count-kzt="316936798">316 936 798 ₸</p>
+              <p class="wallet-mock__balance" data-wallet-balance data-count-kzt="316900000000">316,9 млрд ₸</p>
               <div class="wallet-mock__row">
                 <div class="wallet-mock__chip wallet-mock__chip--up">
                   <span>Клиенты</span>
@@ -409,7 +442,7 @@
             <p class="section-text">Я веду юридическое сопровождение возвратов в партнёрстве с платформой <a href="https://financegroup.store/" target="_blank" rel="noopener"><strong>financegroup.store</strong></a> — единый кабинет, KYC, статусы дел и международный регуляторный контур, как на <a href="https://financegroup.store/" target="_blank" rel="noopener">GlobalSafe Finance</a>.</p>
             <ul class="gs-banner__stats">
               <li><strong data-count="12495">12 495</strong><span>клиентов на платформе</span></li>
-              <li><strong data-count-kzt="316936798" data-platform-kzt>316 936 798 ₸</strong><span>в контуре возвратов</span></li>
+              <li><strong data-count-kzt="316900000000" data-platform-kzt>316,9 млрд ₸</strong><span>в контуре возвратов</span></li>
               <li><strong>24/7</strong><span>поддержка кейса</span></li>
             </ul>
             <div class="gs-banner__actions">
@@ -657,22 +690,22 @@
         <div class="contact__grid">
           <form class="contact-form" data-contact-form>
             <label>
-              <span>📝 Опишите ситуацию коротко</span>
-              <textarea name="message" rows="4" required placeholder="Кто обманул, сколько, когда…"></textarea>
-            </label>
-            <label>
-              <span>📞 Ваш телефон</span>
-              <input type="tel" name="phone" required placeholder="+7 775 419 49 17" autocomplete="tel">
-            </label>
-            <label>
-              <span>✉️ WhatsApp / Telegram (необязательно)</span>
-              <input type="text" name="messenger" placeholder="@username">
-            </label>
-            <label>
               <span>👤 Ваше имя</span>
               <input type="text" name="name" required autocomplete="name" placeholder="Имя">
             </label>
-            <button type="submit" class="btn btn--candy btn--block">🔘 Отправить заявку</button>
+            <label>
+              <span>📞 Ваш телефон</span>
+              <input type="tel" name="phone" required placeholder="+7 775 000 00 00" autocomplete="tel" inputmode="tel" pattern="[\d\s+()\-]{10,}">
+            </label>
+            <label>
+              <span>✉️ WhatsApp / Telegram (необязательно)</span>
+              <input type="text" name="messenger" placeholder="@username" autocomplete="off">
+            </label>
+            <label>
+              <span>📝 Опишите ситуацию коротко</span>
+              <textarea name="message" rows="4" required placeholder="Кто обманул, сколько, когда…"></textarea>
+            </label>
+            <button type="submit" class="btn btn--candy btn--block">📱 Отправить в WhatsApp</button>
             <p class="contact-form__legal">Нажимая кнопку, вы соглашаетесь на обработку данных для обратной связи.</p>
           </form>
           <aside class="contact-aside">
@@ -708,7 +741,7 @@
       </div>
       <div class="footer__legal">
         <p>© <span data-year></span> Сергей Макаров. Все права защищены.</p>
-        <p><a href="#contact">Договор оферты</a> · <a href="#contact">Политика конфиденциальности</a></p>
+        <p><a href="offer.html">Договор оферты</a> · <a href="privacy.html">Политика конфиденциальности</a></p>
         <p class="footer__disclaimer">Информация на сайте не является публичной офертой. Результаты индивидуальны и зависят от обстоятельств дела. Материалы носят информационный характер.</p>
       </div>
     </div>
@@ -716,7 +749,11 @@
 
   <div class="toast-stack" data-toast-stack aria-live="polite" aria-atomic="true"></div>
 
-  <a class="float-wa pulse-glow" href="https://wa.me/77754194917" target="_blank" rel="noopener" aria-label="WhatsApp">📱</a>
+  <div class="sticky-cta" data-sticky-cta hidden>
+    <a class="btn btn--candy btn--block" href="#contact">🍬 Бесплатная консультация 15 мин</a>
+  </div>
+
+  <a class="float-wa pulse-glow" href="https://wa.me/77754194917" target="_blank" rel="noopener" aria-label="Написать в WhatsApp">📱</a>
 
   <script src="assets/js/main.js" defer></script>
   <script src="assets/js/wallet-animations.js" defer></script>

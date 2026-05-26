@@ -117,7 +117,8 @@
     }
   });
 
-  if ("IntersectionObserver" in window) {
+  var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if ("IntersectionObserver" in window && !reducedMotion) {
     var revealObs = new IntersectionObserver(
       function (entries) {
         entries.forEach(function (entry) {
@@ -139,34 +140,83 @@
       });
   }
 
+  function pushUserToast(title, sub) {
+    var stack = document.querySelector("[data-toast-stack]");
+    if (!stack) return;
+    var el = document.createElement("div");
+    el.className = "toast";
+    el.innerHTML =
+      '<span class="toast__icon" aria-hidden="true">✓</span>' +
+      '<div class="toast__body"><strong>' +
+      title +
+      "</strong><span>" +
+      sub +
+      "</span></div>";
+    stack.appendChild(el);
+    setTimeout(function () {
+      el.classList.add("is-out");
+      setTimeout(function () {
+        if (el.parentNode) el.parentNode.removeChild(el);
+      }, 400);
+    }, 6000);
+  }
+
   var form = document.querySelector("[data-contact-form]");
   if (form) {
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       var data = new FormData(form);
-      var name = data.get("name") || "";
-      var phone = data.get("phone") || "";
-      var messenger = data.get("messenger") || "";
-      var message = data.get("message") || "";
-      var body = encodeURIComponent(
-        "Имя: " + name + "\nТелефон: " + phone + "\nМессенджер: " + messenger + "\n\nСитуация:\n" + message
-      );
-      var subject = encodeURIComponent("Заявка с сайта — возврат денег");
-      var mailto =
-        "mailto:finmanager063@gmail.com?subject=" + subject + "&body=" + body;
-      var waText = encodeURIComponent(
-        "Здравствуйте, " +
-          name +
-          ". Хочу консультацию по возврату денег. " +
-          message +
-          " Тел: " +
-          phone
-      );
-      if (window.confirm("Открыть WhatsApp для быстрой отправки? (Отмена — отправка на email)")) {
-        window.open("https://wa.me/77754194917?text=" + waText, "_blank");
-      } else {
-        window.location.href = mailto;
+      var name = String(data.get("name") || "").trim();
+      var phone = String(data.get("phone") || "").trim();
+      var messenger = String(data.get("messenger") || "").trim();
+      var message = String(data.get("message") || "").trim();
+      var digits = phone.replace(/\D/g, "");
+      if (digits.length < 10) {
+        pushUserToast("Проверьте телефон", "Укажите номер с кодом страны, например +7 775 …");
+        form.querySelector('[name="phone"]').focus();
+        return;
       }
+      var lines = [
+        "Здравствуйте! Хочу консультацию по возврату денег.",
+        "",
+        "Имя: " + name,
+        "Телефон: " + phone,
+      ];
+      if (messenger) lines.push("Мессенджер: " + messenger);
+      lines.push("", "Ситуация:", message);
+      var waText = encodeURIComponent(lines.join("\n"));
+      window.open("https://wa.me/77754194917?text=" + waText, "_blank", "noopener");
+      pushUserToast("Откройте WhatsApp", "Отправьте сообщение — отвечу в течение 3 часов");
+      form.reset();
     });
+  }
+
+  var stickyCta = document.querySelector("[data-sticky-cta]");
+  var heroSection = document.getElementById("hero");
+  var contactSection = document.getElementById("contact");
+  if (stickyCta && heroSection && "IntersectionObserver" in window) {
+    var showSticky = false;
+    var inContact = false;
+    function updateSticky() {
+      stickyCta.hidden = !(showSticky && !inContact);
+    }
+    var heroObs = new IntersectionObserver(
+      function (entries) {
+        showSticky = !entries[0].isIntersecting;
+        updateSticky();
+      },
+      { threshold: 0, rootMargin: "-80px 0px 0px 0px" }
+    );
+    heroObs.observe(heroSection);
+    if (contactSection) {
+      var contactObs = new IntersectionObserver(
+        function (entries) {
+          inContact = entries[0].isIntersecting;
+          updateSticky();
+        },
+        { threshold: 0.15 }
+      );
+      contactObs.observe(contactSection);
+    }
   }
 })();
