@@ -135,6 +135,16 @@
     bindGsfKzt();
   }
 
+  document.querySelectorAll(".case-card__photo[data-initials]").forEach(function (el) {
+    var init = el.getAttribute("data-initials");
+    if (init) {
+      el.textContent = init;
+      el.style.fontSize = "28px";
+      el.style.fontWeight = "800";
+      el.style.color = "var(--gold)";
+    }
+  });
+
   var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if ("IntersectionObserver" in window && !reducedMotion) {
     var revealObs = new IntersectionObserver(
