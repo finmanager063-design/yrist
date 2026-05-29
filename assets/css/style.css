@@ -652,19 +652,18 @@ a:hover {
 .case-card__photo {
   width: 64px;
   height: 64px;
-  display: grid;
-  place-items: center;
   margin-bottom: 16px;
   border-radius: 12px;
+  overflow: hidden;
   background: var(--blue);
-  font-size: 24px;
-  border: 1px dashed rgba(255, 215, 0, 0.3);
+  border: 2px solid rgba(255, 215, 0, 0.35);
 }
 
-.case-card__photo::after {
-  content: attr(data-initials);
-  position: absolute;
-  font-size: 0;
+.case-card__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .case-card h3 {
@@ -946,14 +945,20 @@ a:hover {
 }
 
 .review-card__thumb {
-  width: 48px;
-  height: 48px;
-  display: grid;
-  place-items: center;
+  width: 56px;
+  height: 56px;
   margin-bottom: 12px;
-  border-radius: 8px;
+  border-radius: 50%;
+  overflow: hidden;
   background: var(--blue);
-  font-size: 20px;
+  border: 2px solid rgba(255, 215, 0, 0.35);
+}
+
+.review-card__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .review-card h3 {

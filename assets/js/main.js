@@ -37,7 +37,7 @@
     requestAnimationFrame(tick);
   }
 
-  document.querySelectorAll("[data-count]").forEach(function (el) {
+  function bindCountAnimation(el) {
     var target = parseInt(el.getAttribute("data-count"), 10);
     if (Number.isNaN(target)) return;
     var run = function () {
@@ -61,7 +61,19 @@
     } else {
       run();
     }
-  });
+  }
+
+  document.querySelectorAll("[data-count]:not([data-gsf-clients])").forEach(bindCountAnimation);
+
+  function bindGsfCounts() {
+    document.querySelectorAll("[data-gsf-clients]").forEach(bindCountAnimation);
+  }
+
+  if (window.GSF_STATS_READY) {
+    window.GSF_STATS_READY.then(bindGsfCounts);
+  } else {
+    bindGsfCounts();
+  }
 
   function formatKztDisplay(n) {
     if (n >= 1e9) {
@@ -77,7 +89,7 @@
     return fmt.format(Math.round(n)) + " ₸";
   }
 
-  document.querySelectorAll("[data-count-kzt]:not([data-wallet-balance]):not([data-platform-kzt])").forEach(function (kztEl) {
+  function bindKztAnimation(kztEl) {
     var kztTarget = parseFloat(kztEl.getAttribute("data-count-kzt"));
     if (Number.isNaN(kztTarget)) return;
     var runKzt = function () {
@@ -105,17 +117,23 @@
     } else {
       runKzt();
     }
-  });
+  }
 
-  document.querySelectorAll(".case-card__photo[data-initials]").forEach(function (el) {
-    var init = el.getAttribute("data-initials");
-    if (init) {
-      el.textContent = init;
-      el.style.fontSize = "28px";
-      el.style.fontWeight = "800";
-      el.style.color = "var(--gold)";
-    }
-  });
+  document
+    .querySelectorAll(
+      "[data-count-kzt]:not([data-wallet-balance]):not([data-platform-kzt]):not([data-gsf-kzt])"
+    )
+    .forEach(bindKztAnimation);
+
+  function bindGsfKzt() {
+    document.querySelectorAll("[data-gsf-kzt]").forEach(bindKztAnimation);
+  }
+
+  if (window.GSF_STATS_READY) {
+    window.GSF_STATS_READY.then(bindGsfKzt);
+  } else {
+    bindGsfKzt();
+  }
 
   var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if ("IntersectionObserver" in window && !reducedMotion) {

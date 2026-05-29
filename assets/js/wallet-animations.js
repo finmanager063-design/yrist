@@ -71,26 +71,41 @@
     }
   }
 
-  document.querySelectorAll("[data-wallet-balance]").forEach(function (el) {
-    var target = parseFloat(el.getAttribute("data-count-kzt"));
-    observeAnimate(el, function () {
-      animateKztEl(el, target);
+  function initGsfWalletAnimations() {
+    document.querySelectorAll("[data-wallet-balance]").forEach(function (el) {
+      var target = parseFloat(el.getAttribute("data-count-kzt"));
+      observeAnimate(el, function () {
+        animateKztEl(el, target);
+      });
     });
-  });
 
-  document.querySelectorAll("[data-platform-kzt]").forEach(function (el) {
-    var target = parseFloat(el.getAttribute("data-count-kzt"));
-    observeAnimate(el, function () {
-      animateKztEl(el, target);
+    document.querySelectorAll("[data-platform-kzt]").forEach(function (el) {
+      var target = parseFloat(el.getAttribute("data-count-kzt"));
+      observeAnimate(el, function () {
+        animateKztEl(el, target);
+      });
     });
-  });
 
-  document.querySelectorAll(".gs-banner__stats [data-count]").forEach(function (el) {
-    var target = parseInt(el.getAttribute("data-count"), 10);
-    observeAnimate(el, function () {
-      animateCountEl(el, target);
+    document.querySelectorAll(".gs-banner__stats [data-gsf-clients]").forEach(function (el) {
+      var target = parseInt(el.getAttribute("data-count"), 10);
+      observeAnimate(el, function () {
+        animateCountEl(el, target);
+      });
     });
-  });
+
+    document.querySelectorAll(".gs-banner__stats [data-gsf-kzt]").forEach(function (el) {
+      var target = parseFloat(el.getAttribute("data-count-kzt"));
+      observeAnimate(el, function () {
+        animateKztEl(el, target);
+      });
+    });
+  }
+
+  if (window.GSF_STATS_READY) {
+    window.GSF_STATS_READY.then(initGsfWalletAnimations);
+  } else {
+    initGsfWalletAnimations();
+  }
 
   document.querySelectorAll(".stat-card").forEach(function (card) {
     observeAnimate(card, function () {
@@ -139,7 +154,7 @@
     "Зачисление · 4 250 000 ₸ · Алматы",
     "Возврат · 18 600 000 ₸ · Астана",
     "Статус: завершено · 890 000 ₸ · Шымкент",
-    "Контур GSF · 316,9 млрд ₸ в работе",
+    "Контур GSF · financegroup.store",
     "Досудебное · 67 млн ₸ · Актобе",
     "Клиент +1 · регистрация на платформе",
   ];
@@ -168,7 +183,7 @@
     { title: "Возврат зачислен", sub: "+2 840 000 ₸ · клиент из Алматы" },
     { title: "Дело закрыто досудебно", sub: "87% · без суда · GlobalSafe Finance" },
     { title: "Новый кейс принят", sub: "Разбор за 24 ч · Сергей Макаров" },
-    { title: "Контур активен", sub: "316,9 млрд ₸ · financegroup.store" },
+    { title: "Контур активен", sub: "Данные с financegroup.store" },
     { title: "Претензия отправлена", sub: "Брокер GlobalTrade FX · ожидание ответа" },
   ];
   var toastIdx = 0;
