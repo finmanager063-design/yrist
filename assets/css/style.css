@@ -637,40 +637,22 @@ a:hover {
 }
 
 .case-card {
-  padding: 24px;
-  border-radius: 16px;
+  border-radius: 18px;
   background: var(--surface);
   border: 1px solid var(--line);
+}
+
+.case-card:not(.person-card) {
+  padding: 24px;
   transition: border-color 0.2s, transform 0.2s;
 }
 
-.case-card:hover {
+.case-card:not(.person-card):hover {
   border-color: rgba(255, 215, 0, 0.35);
   transform: translateY(-4px);
 }
 
-.case-card__photo {
-  width: 64px;
-  height: 64px;
-  display: grid;
-  place-items: center;
-  margin-bottom: 16px;
-  border-radius: 12px;
-  background: var(--blue);
-  font-size: 24px;
-  font-weight: 800;
-  color: var(--gold);
-  border: 1px dashed rgba(255, 215, 0, 0.3);
-  position: relative;
-}
-
-.case-card__photo::after {
-  content: attr(data-initials);
-  position: absolute;
-  font-size: 0;
-}
-
-.case-card h3 {
+.case-card:not(.person-card) h3 {
   margin: 0 0 14px;
   font-size: 17px;
 }
@@ -942,24 +924,16 @@ a:hover {
 }
 
 .review-card {
-  padding: 24px;
-  border-radius: 14px;
+  border-radius: 16px;
   background: var(--surface);
   border: 1px solid var(--line);
 }
 
-.review-card__thumb {
-  width: 48px;
-  height: 48px;
-  display: grid;
-  place-items: center;
-  margin-bottom: 12px;
-  border-radius: 8px;
-  background: var(--blue);
-  font-size: 20px;
+.review-card:not(.person-card) {
+  padding: 24px;
 }
 
-.review-card h3 {
+.review-card:not(.person-card) h3 {
   margin: 0 0 12px;
   font-size: 16px;
 }

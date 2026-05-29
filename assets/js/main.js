@@ -135,14 +135,11 @@
     bindGsfKzt();
   }
 
-  document.querySelectorAll(".case-card__photo[data-initials]").forEach(function (el) {
-    var init = el.getAttribute("data-initials");
-    if (init) {
-      el.textContent = init;
-      el.style.fontSize = "28px";
-      el.style.fontWeight = "800";
-      el.style.color = "var(--gold)";
-    }
+  document.querySelectorAll(".cases .person-card").forEach(function (card, index) {
+    card.style.setProperty("--card-i", String(index));
+  });
+  document.querySelectorAll(".reviews .person-card").forEach(function (card, index) {
+    card.style.setProperty("--card-i", String(index));
   });
 
   var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -160,7 +157,7 @@
     );
     document
       .querySelectorAll(
-        ".section, .stat-card, .story, .return-card, .review-card, .process li, .guarantee-box"
+        ".section, .stat-card, .story, .return-card, .case-card, .review-card, .process li, .guarantee-box"
       )
       .forEach(function (el) {
         el.classList.add("reveal");
