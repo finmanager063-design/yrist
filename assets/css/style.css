@@ -34,6 +34,10 @@ html {
     transform: none;
     transition: none;
   }
+
+  .hero-lawyer {
+    animation: none;
+  }
 }
 
 .skip-link {
@@ -413,6 +417,63 @@ a:hover {
   color: var(--muted);
 }
 
+.hero__visual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.hero-lawyer {
+  position: relative;
+  width: min(240px, 100%);
+  margin: 0;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 2px solid rgba(255, 215, 0, 0.5);
+  box-shadow:
+    0 20px 48px rgba(0, 0, 0, 0.5),
+    0 0 32px rgba(255, 215, 0, 0.1);
+  background: #fff;
+  animation: hero-lawyer-in 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes hero-lawyer-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.hero-lawyer__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  vertical-align: middle;
+  object-fit: cover;
+  object-position: center top;
+  aspect-ratio: 398 / 552;
+}
+
+.hero-lawyer__caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 28px 14px 12px;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: var(--font-head);
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(180deg, transparent, rgba(10, 37, 64, 0.92));
+}
+
 .hero-card {
   padding: 32px;
   border-radius: 20px;
@@ -745,16 +806,22 @@ a:hover {
 }
 
 .about__photo {
-  width: 200px;
-  height: 200px;
-  display: grid;
-  place-items: center;
-  border-radius: 20px;
-  font-size: 56px;
-  font-weight: 800;
-  background: linear-gradient(145deg, var(--gold), var(--gold-dim));
-  color: #0a0a0a;
+  width: 220px;
+  height: 280px;
   margin-bottom: 12px;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 2px solid rgba(255, 215, 0, 0.45);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+  background: #fff;
+}
+
+.about__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
 }
 
 .about__age {
