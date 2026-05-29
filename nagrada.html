@@ -18,13 +18,25 @@
     .article-page ul { padding-left: 1.2em; margin: 0 0 16px; }
     .award-box {
       margin: 32px 0;
-      padding: 28px;
+      padding: 0;
       border-radius: 16px;
       background: linear-gradient(145deg, rgba(10,37,64,.95), rgba(0,0,0,.4));
       border: 2px solid rgba(255,215,0,.45);
       text-align: center;
+      overflow: hidden;
     }
-    .award-box__icon { font-size: 56px; display: block; margin-bottom: 12px; }
+    .award-box__photo {
+      margin: 0;
+      line-height: 0;
+    }
+    .award-box__photo img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .award-box__body {
+      padding: 22px 28px 28px;
+    }
     .award-box strong { color: var(--gold); font-size: 18px; }
     .article-page a.back { display: inline-block; margin-bottom: 24px; font-weight: 600; }
     .article-cta { margin-top: 40px; padding-top: 28px; border-top: 1px solid var(--line); }
@@ -45,12 +57,16 @@
     </p>
 
     <div class="award-box">
-      <span class="award-box__icon" aria-hidden="true">🏅</span>
-      <p><strong>Благодарственное письмо</strong></p>
-      <p style="margin-top:8px;font-size:14px;color:var(--muted)">
-        За вклад в защиту прав потребителей финансовых услуг<br>
-        и содействие восстановлению справедливости
-      </p>
+      <figure class="award-box__photo">
+        <img src="assets/img/nagrada-tokayev.jpg" alt="Сергей Макаров и Президент Республики Казахстан Касым-Жомарт Токаев" width="1024" height="712" loading="eager" decoding="async">
+      </figure>
+      <div class="award-box__body">
+        <p><strong>🏅 Благодарственное письмо</strong></p>
+        <p style="margin-top:8px;font-size:14px;color:var(--muted)">
+          За вклад в защиту прав потребителей финансовых услуг<br>
+          и содействие восстановлению справедливости
+        </p>
+      </div>
     </div>
 
     <h2>Как это произошло</h2>
